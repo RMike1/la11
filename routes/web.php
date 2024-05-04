@@ -19,3 +19,12 @@ route::get('/crud/edit/{id}',[CrudController::class,'edit'])->name('crud.edit');
 route::post('/crud/store',[CrudController::class,'store'])->name('crud.store');
 route::post('/crud/update',[CrudController::class,'update'])->name('crud.update');
 route::get('/crud/delete/{id}',[CrudController::class,'delete'])->name('crud.delete');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

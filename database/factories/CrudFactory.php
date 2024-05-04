@@ -19,7 +19,9 @@ class CrudFactory extends Factory
     {
         return [
             'name'=>fake()->name(),
+            'image'=>fake()->imageUrl(),
             'age'=>fake()->randomNumber(1,100),
+
         ];
     }
 }

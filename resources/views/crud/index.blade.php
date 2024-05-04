@@ -17,6 +17,7 @@
             <tr>
                 <th>Name</th>
                 <th>Age</th>
+                <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -25,9 +26,10 @@
                 <tr>
                     <td>{{$info->name}}</td>
                     <td>{{$info->age}}</td>
+                    <td><img src="{{Storage::url($info->image)}}" alt="img" style="padding:10px; height: 200px;"></td>
                     <td>
                         <a href="{{route('crud.edit',$info->id)}}">Edit</a>
-                        <a href="{{route('crud.delete',$info->id)}}">Delete</a>
+                        <a onclick="return confirm('sure to delete??')" href="{{route('crud.delete',$info->id)}}">Delete</a>
                     </td>
                 </tr>
             @endforeach
