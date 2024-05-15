@@ -11,6 +11,7 @@ class Socialmedia extends Model
 
     protected $fillable=[
         'name',
-        'image'
+        'image',
+        'url'
     ];
 }

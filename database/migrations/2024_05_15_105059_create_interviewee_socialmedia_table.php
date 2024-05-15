@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Interviewee;
+use App\Models\Socialmedia;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,10 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('socialmedia', function (Blueprint $table) {
+        Schema::create('interviewee_socialmedia', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('url');
+            $table->foreignIdFor(Interviewee::class);
+            $table->foreignIdFor(Socialmedia::class);
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('socialmedia');
+        Schema::dropIfExists('interviewee_socialmedia');
     }
 };

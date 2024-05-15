@@ -3,10 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Crud;
-use App\Models\Student;
+use App\Models\Category;
+use App\Models\Interviewee;
+use App\Models\Podcast;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\SocialMediaSeeder;
+use Database\Seeders\CategoryIntervieweeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,11 +19,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(10)->create();
-        Crud::factory(10)->create();
+        Category::factory(10)->create();
+        Interviewee::factory(5)->create();
+        Podcast::factory(5)->create();
 
-        Student::factory(2)->create();
-
-
+         $this->call([
+            CategoryIntervieweeSeeder::class,
+            IntervieweeSocialmediaSeeder::class,
+            SocialMediaSeeder::class
+        ]);
+      
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

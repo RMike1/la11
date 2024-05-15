@@ -1,14 +1,11 @@
 <?php
 
-use App\Livewire\Wire;
-use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CrudController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -20,10 +17,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-route::get('test', function(){
-    return view('user.index');
-});
+route::get('/',[HomeController::class,'index'])->name('index');
 
 
 

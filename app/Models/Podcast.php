@@ -17,4 +17,12 @@ class Podcast extends Model
         'category_id',
         'interviewee_id'
     ];
+
+    public function getCategoryRelation(){
+        return $this->belongsTo(Category::class);
+    }
+    public function getIntervieweeRelation(){
+        return $this->belongsTo(Interviewee::class);
+    }
+
 }

@@ -13,7 +13,16 @@ class Interviewee extends Model
         'firstName',
         'secondName',
         'image',
-        'category_id',
+        'is_verified',
         'socialmedia_id'
     ];
+
+    public function categoryRelation(){
+        return $this->belongsToMany(Category::class,table:'category_interviewee',foreignPivotKey:'interviewee_id',relatedPivotKey:'category_id');
+    }
+
+    public function socialMediaRelation(){
+        return $this->belongsToMany(Socialmedia::class,table:'interviewee_socialmedia',foreignPivotKey:'interviewee_id',relatedPivotKey:'socialmedia_id');
+    }
 }
+

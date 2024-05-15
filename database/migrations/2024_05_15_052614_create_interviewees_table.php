@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('secondName')->nullable();
             $table->string('image');
-            $table->foreignIdFor(Category::class);
+            $table->boolean('is_verified')->default(false);
             $table->foreignIdFor(Socialmedia::class);
             $table->timestamps();
         });

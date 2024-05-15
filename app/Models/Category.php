@@ -15,4 +15,8 @@ class Category extends Model
         'image',
         'slug'
     ];
+
+    public function interviewee(){
+        return $this->belongsToMany(interviewee::class);
+    }
 }
