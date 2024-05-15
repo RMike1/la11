@@ -21,6 +21,10 @@ Route::middleware([
 });
 
 
+route::get('test', function(){
+    return view('user.index');
+});
+
 
 
 
