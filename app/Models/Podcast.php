@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
+use App\Models\Interviewee;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Podcast extends Model
 {
@@ -19,10 +21,10 @@ class Podcast extends Model
     ];
 
     public function getCategoryRelation(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,foreignKey:'category_id',ownerKey:'id');
     }
     public function getIntervieweeRelation(){
-        return $this->belongsTo(Interviewee::class);
+        return $this->belongsTo(Interviewee::class,foreignKey:'interviewee_id',ownerKey:'id');
     }
 
 }

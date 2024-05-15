@@ -13,8 +13,8 @@ class HomeController
         $intervieweeData=Interviewee::with('categoryRelation','socialMediaRelation')->get();
         $podcastData=Podcast::with('getCategoryRelation','getIntervieweeRelation')->get();
 
-        $info=Podcast::find(4)->getIntervieweeRelation()->get();
-        // dd($info);
+        $info=Podcast::find(1)->getIntervieweeRelation()->get();
+        // dd($podcastData);
 
         return view('user.index',compact('intervieweeData','podcastData'));
     }

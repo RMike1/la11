@@ -39,11 +39,11 @@
 
                         <div class="profile-block d-flex">
                             <img src="{{asset('user/images/profile/woman-posing-black-dress-medium-shot.jpg')}}"
-                                class="profile-block-image img-fluid" alt="">
+                                class="profile-block-image img-fluid" alt=""> 
 
                             @if($podcast->getIntervieweeRelation || $podcast->getCategoryRelation)
                             <p>
-                                {{$podcast->getIntervieweeRelation->firstName}}
+                                {{$podcast->getIntervieweeRelation->firstName}} 
                                 <img src="{{asset('user/images/verified.png')}}" class="verified-image img-fluid" alt="">
                                 <strong>{{$podcast->getCategoryRelation->title}}</strong>
                             </p>
