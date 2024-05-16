@@ -17,7 +17,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
-route::get('/',[HomeController::class,'index'])->name('index');
+route::get('/',[HomeController::class,'index'])->name('pod.index');
+route::get('pod/{slug}',[HomeController::class,'show'])->name('pod.details');
 
 
 

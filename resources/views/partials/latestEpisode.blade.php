@@ -1,5 +1,5 @@
 @foreach($podcastData as $podcast)
-            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+            <div class="col-lg-6 col-12 mb-4 mt-4 mb-lg-0">
                 <div class="custom-block d-flex">
                     <div class="">
                         <div class="custom-block-icon-wrap">
@@ -32,7 +32,7 @@
                         </div>
 
                         <h5 class="mb-2">
-                            <a href="detail-page.html">
+                            <a href="{{route('pod.details',$podcast->slug)}}" wire:navigate.hover >
                                 {{$podcast->title}}
                             </a>
                         </h5>
@@ -43,14 +43,16 @@
 
                             @if($podcast->getIntervieweeRelation || $podcast->getCategoryRelation)
                             <p>
-                                {{$podcast->getIntervieweeRelation->firstName}} 
-                                <img src="{{asset('user/images/verified.png')}}" class="verified-image img-fluid" alt="">
+                                {{$podcast->getIntervieweeRelation->firstName}}
+                                 @if($podcast->getIntervieweeRelation->is_verified)
+                                    <img src="{{asset('user/images/verified.png')}}" class="verified-image img-fluid" alt="">
+                                @endif
                                 <strong>{{$podcast->getCategoryRelation->title}}</strong>
                             </p>
                             @endif
                         </div>
 
-                        <p class="mb-0">{{Str::limit($podcast->description,55)}}</p>
+                        <p class="mb-0">{{Str::limit($podcast->description,50)}}</p>
 
                         <div class="custom-block-bottom d-flex justify-content-between mt-3">
                             <a href="#" class="bi-headphones me-1">
