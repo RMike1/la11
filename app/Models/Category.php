@@ -19,4 +19,9 @@ class Category extends Model
     public function interviewee(){
         return $this->belongsToMany(interviewee::class);
     }
+
+    public function podcasts(){
+        return $this->hasMany(Podcast::class);
+
+    }
 }

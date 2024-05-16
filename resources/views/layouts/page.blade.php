@@ -29,6 +29,7 @@
 
     <link href="{{asset('user/css/templatemo-pod-talk.css')}}" rel="stylesheet">
 
+    @livewireStyles
     
 </head>
 
@@ -41,6 +42,7 @@
 
 
     <!-- JAVASCRIPT FILES -->
+    @livewireScripts
     <script src="{{asset('user/js/jquery.min.js')}}"></script>
     <script src="{{asset('user/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('user/js/owl.carousel.min.js')}}"></script>

@@ -106,7 +106,7 @@
             <div class="col-lg-4 col-12 mb-4 mb-lg-0">
                 <div class="custom-block custom-block-full">
                     <div class="custom-block-image-wrap">
-                        <a href="detail-page.html">
+                        <a href="{{route('pod.details',$relatedEpisode->slug)}}" wire:navigate.hover>
                             <img src="{{asset('user/images/podcast/27376480_7326766.jpg')}}" class="custom-block-image img-fluid"
                                 alt="">
                         </a>
@@ -114,7 +114,7 @@
 
                     <div class="custom-block-info">
                         <h5 class="mb-2">
-                            <a href="{{route('pod.details',$relatedEpisode->slug)}}">
+                            <a href="{{route('pod.details',$relatedEpisode->slug)}}" wire:navigate.hover>
                                 {{$relatedEpisode->title}}
                             </a>
                         </h5>

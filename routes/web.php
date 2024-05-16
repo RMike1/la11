@@ -19,6 +19,7 @@ Route::middleware([
 
 route::get('/',[HomeController::class,'index'])->name('pod.index');
 route::get('pod/{slug}',[HomeController::class,'show'])->name('pod.details');
+route::get('podtalk/category/{slug}',[HomeController::class,'list_category'])->name('pod.category');
 
 
 
