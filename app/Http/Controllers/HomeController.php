@@ -34,7 +34,6 @@ class HomeController
     public function list_category($slug)
     {
         $relatedEpisodes=Category::where('slug',$slug)->first()->podcasts()->latest()->paginate(3);
-
         $category_title=Category::where('slug',$slug)->select('title')->first();
 
         return view('user.podcast-category-list',compact('relatedEpisodes','category_title'));
